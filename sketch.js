@@ -12,7 +12,7 @@ function preload()
 {
 	starImg = loadImage("images/star.png");
 	bgImg = loadImage("images/starNight.png");
-	//fairyImg-loadAnimation("fairyImage1.png, fairyImage2.png")
+	fairyImg=loadAnimation("images/fairyImage1.png", "images/fairyImage2.png")
 	//load animation for fairy here
 }
 
@@ -23,7 +23,8 @@ function setup() {
 
 	//create fairy sprite and add animation for fairy
 	fairy=createSprite(100, 650);
-	//fairy=addAnimation(fairyImg);
+	fairy.addAnimation("fairy", fairyImg);
+	fairy.scale=0.3;
 
 
 	star = createSprite(650,30);
@@ -62,7 +63,7 @@ function draw() {
 function keyPressed() {
 
 	if (keyCode === DOWN_ARROW) {
-		Matter.Body.setStatic(starBody,false); 
+		Matter.Body.setStatic(starBody, false); 
 	}
 
 	//writw code to move fairy left and right
